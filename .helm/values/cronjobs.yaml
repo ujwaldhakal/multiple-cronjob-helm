@@ -1,19 +1,19 @@
-  jobs:
-    - id: job1
-      name: Does number 1 job
-      command: "date; echo Completed job 1"
-      schedule: "* * * * *"
-    - id: job2
-      name: Does number 2 job
-      command: "date; echo Completed job 2"
-      schedule: "* * * * *"
+cronjobs:
+  - id: job-1
+    name: job-1
+    command: "date; echo Completed job 1"
+    schedule: "* * * * *"
+  - id: job-2
+    name: job-2
+    command: "date; echo Completed job 2"
+    schedule: "* * * * *"
 
-    - id: job3
-      name: Does number 3 job
-      command: "date; echo Completed job 3"
-      schedule: "* * * * *"
+  - id: job-3
+    name: job-3
+    command: "date; echo Completed job 3"
+    schedule: "* * * * *"
 
-    - id: job1
-      name: Does number 4 job
-      command: "date; echo Completed job 4"
-      schedule: "* * * * *"
+  - id: job-4
+    name: job-4
+    command: "date; echo Completed job 4"
+    schedule: "* * * * *"

@@ -1,0 +1,25 @@
+{{- range $cronjob := $.Values.cronjobs }}
+
+---
+
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: {{ $cronjob.id }}
+spec:
+  schedule: "{{ $cronjob.schedule }}"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+          - name: cron-runner
+            image: busybox:1.28
+            command:
+            - /bin/sh
+            - -c
+            - {{ $cronjob.command }}
+          restartPolicy: OnFailure
+
+
+{{- end }}          
